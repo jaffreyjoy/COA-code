@@ -441,7 +441,7 @@ int main()
 			if( s[3]==0 && s[2]==0 && s[1]==1 && s[0]==0 )
 			{
 				binneg(r,b);
-				binand(r1,a,b);
+				binand(r1,a,r);
 				for(i=3;i>=0;i--)
 				{
 					r2[i]=r1[i]^one[i]^bor;
