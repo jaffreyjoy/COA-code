@@ -214,6 +214,7 @@ evenpar()
 	printf("Value of P1 is %d\n",a[0]);
 	printf("Value of P2 is %d\n",a[1]);
 	printf("Value of P4 is %d\n",a[3]);
+	printf("Value of P8 is %d\n",a[7]);
 	
 	printf("\n8-bit Hamming code is:-\n");
 	printf("D12 D11 D10 D9  P8  D7  D6  D5  P4  D3  P2  P1\n");
@@ -341,6 +342,7 @@ oddpar()
 	printf("Value of P1 is %d\n",a[0]);
 	printf("Value of P2 is %d\n",a[1]);
 	printf("Value of P4 is %d\n",a[3]);
+	printf("Value of P8 is %d\n",a[7]);
 	
 	printf("\n8-bit Hamming code is:-\n");
 	printf("D12 D11 D10 D9  P8  D7  D6  D5  P4  D3  P2  P1\n");
