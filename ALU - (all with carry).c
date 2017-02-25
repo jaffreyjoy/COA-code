@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
  int a[4]={0,0,0,0};
  int b[4]={0,0,0,0};
@@ -127,12 +128,13 @@ int neg(int x)
  
 int main()
 {
-	
+	int ch1;
 	int a1,b1,s1,m,i,j,cin;
 	int valid;
 	int c1=0,c2=0,c3=0,carry=0;
 	int bor=0;
 	//TAKING USER I/P FOR A
+	labelinp:
  	printf("Enter value of A (4-bit binary).\n>");
  	labela:
 	scanf("%d",&a1);
@@ -208,19 +210,9 @@ int main()
 	//
 	
 	
-	//TAKING CHOICE OF OPERATION FROM USER
-	printf("Enter a choice.\n1.LOGIC\n2.ARITHMETIC\n>");
-	labelm:
-	scanf("%d",&m);
-	if(m!=1 && m!=2)
-	{
-		printf("Invalid input was entered.\nEnter again\n>");
-		goto labelm;
-	}
-	//
-	
 	
 	//TAKING SELECT INPUT FROM USER
+	labels:
 	printf("\nEnter Select inputs (0 or 1)\n");
 	for(i=3;i>=0;i--)
 	{
@@ -235,6 +227,17 @@ int main()
 	}
 	//
 
+	//TAKING CHOICE OF OPERATION FROM USER
+	labelop:
+	printf("Enter a choice.\n1.LOGIC\n2.ARITHMETIC\n>");
+	labelm:
+	scanf("%d",&m);
+	if(m!=1 && m!=2)
+	{
+		printf("Invalid input was entered.\nEnter again\n>");
+		goto labelm;
+	}
+	//
 	
 	//LOGIC FUNCTIONS
 	if(m==1)
@@ -1148,5 +1151,21 @@ int main()
 		//
 	}
 	//
+	printf("\n\nMenu:\n1.Enter new Operation (for same i/p values)\n2.Enter new Select lines(for same i/p values)\n3.Enter new input values  i.e A & B.\n4.Exit\n");
+	printf("\nEnter your choice:- \n");
+	labelch:
+	scanf("%d",&ch1);
+	if(ch1==1)
+		goto labelop;
+	else if(ch1==2)
+		goto labels;
+	else if(ch1==3)
+		goto labelinp;
+	else if(ch1==4)
+		exit(0);
+	else
+	    printf("Invalid input.Enter again\n>");
+	    goto labelch;
+	 
 	
 }
