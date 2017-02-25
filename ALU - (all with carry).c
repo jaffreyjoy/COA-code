@@ -1164,8 +1164,11 @@ int main()
 	else if(ch1==4)
 		exit(0);
 	else
-	    printf("Invalid input.Enter again\n>");
+	{
+		printf("Invalid input.Enter again\n>");
 	    goto labelch;
+	}
+	    
 	 
 	
 }
