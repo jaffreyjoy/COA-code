@@ -83,8 +83,8 @@ add(int ax[],int mx[])
  	printf("\n-----------------------------------------------------------------------------------------------------------------------");
  	printf("\n__________________________________________n-bit Unsigned Multiplication________________________________________________\n");
  	printf("-----------------------------------------------------------------------------------------------------------------------\n");
- 	//Getting multiplicand from user
- 	printf("\nEnter the Multiplicand(M)\n>");
+ 	//Getting first no. from user
+ 	printf("\nEnter the first number \n>");
  	labela1:
  	scanf("%d",&a1);
  	if(a1<0 || a1>2000000000)
@@ -92,12 +92,11 @@ add(int ax[],int mx[])
  		printf("Invalid input.Enter again\n>");
  		goto labela1;
 	}
- 	n=findbit(a1);
-	printf("\n%d is a %d bit number.\n",a1,n);
+	printf("\n%d is a %d bit number.\n",a1,findbit(a1));
 	//
     	
-	//Getting multiplier from user
- 	printf("\nEnter the Multiplier(Q)\n>");
+	//Getting second no. from user
+ 	printf("\nEnter the second number \n>");
  	labelb1:
  	scanf("%d",&b1);
  	if(b1<0 || b1>2000000000)
@@ -105,9 +104,20 @@ add(int ax[],int mx[])
  		printf("Invalid input.Enter again\n>");
  		goto labelb1;
 	}
- 	n1=findbit(b1);
- 	printf("\n%d is a %d bit number.\n",b1,n1);
+ 	printf("\n%d is a %d bit number.\n",b1,findbit(b1));
 	//
+	
+	int t;
+	if(b1>a1)
+	{
+		t=a1;
+		a1=b1;
+		b1=t;
+	}
+	
+
+	n=findbit(a1);
+	n1=findbit(b1);
 	
 	int a[n]={0};
 	int q[n1]={0};
