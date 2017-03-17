@@ -5,6 +5,31 @@ int q1=0;
 int count;
 int n;
 int n1;
+int max;
+
+//bit pair recoding
+bprec(int ax[],int bx[])
+{
+	int i,j=0;
+	if(max%2==0)
+	{
+		for(i=0;i<max;i++)
+		{
+			ax[i]=2*bx[j]+bx[j+1];
+			j=j+2;
+		}
+	}
+	else
+	{
+		for(i=0;i<max-1;i++)
+		{
+			ax[i]=2*bx[j]+bx[j+1];
+			j=j+2;
+		}
+		ax[max-1]=bx[n-1];
+	}
+	
+}
 
 //copyarray
 copy(int resx[],int arr[],int nx)
@@ -139,7 +164,7 @@ twoscomp(int x[],int y[],int o[],int nx)
  {
  	int i,a1,b1,a2,b2;
  	printf("\n-----------------------------------------------------------------------------------------------------------------------");
- 	printf("\n________________________________________Booth's Unsigned Multiplication________________________________________________\n");
+ 	printf("\n_______________________________________Booth's  Multiplication(Recoding)_______________________________________________\n");
  	printf("-----------------------------------------------------------------------------------------------------------------------\n");
  	//Getting multiplicand from user
  	printf("\nEnter the Multiplicand(M)\n>");
@@ -192,6 +217,13 @@ twoscomp(int x[],int y[],int o[],int nx)
 	one[n-1]=1;
 	one2[2*n-1]=1;
 	count=n;
+
+	if(n%2==0)
+		max=n/2;
+	else
+		max=(n/2)+1;
+ 	
+ 	int bpr[max]={0};
  	
 // 	printf("\none\n");
 //	printbin(one2,2*n);
@@ -242,9 +274,13 @@ twoscomp(int x[],int y[],int o[],int nx)
  	
 //Multiplpication process starts
  	recode(rec,q);
- 	printf("\n\nRECODED bits : ");
+ 	printf("\n\nBooth's RECODED bits : ");
  	printbin(rec,n);
-
+	
+	
+	bprec(bpr,rec);
+ 	printf("\n\nBit-pair RECODED bits : ");
+ 	printbin(bpr,max);
  	
  	printf("\n\n");
  	printbin(m1,2*n);
