@@ -26,7 +26,7 @@ bprec(int ax[],int bx[])
 			ax[i]=2*bx[j]+bx[j+1];
 			j=j+2;
 		}
-		ax[max-1]=bx[n-1];
+		ax[max-1]=2*bx[n-1];
 	}
 	
 }
