@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<math.h>
 int fs;														// Frame size
@@ -471,6 +472,24 @@ int main()
 		}
 	}
 	
+	int maxfarr[pgno];
+	
+	for(i=0;i<pgno;i++)
+	{
+		maxfarr[i]=-1;	
+	}
+	
+	for(i=0;i<pgno;i++)
+	{
+		if(f[i].pgn!=-1 && f[i].pgn!=max1)
+		{
+			if(f[i].freq==max)
+			{
+				maxfarr[i]=f[i].pgn;	
+			}
+		}
+	}
+	
 	
 	int maxp=fpat[0].freq1;
 	int max1p=fpat[0].pgn1;
@@ -527,7 +546,13 @@ int main()
 		}
 	}
 
-	printf("\n\n\t'%d' occured maximum no. of times i.e %d times.\n",max1,max);
+	printf("\n\n\t'%d' ",max1);
+	for(i=0;i<pgno;i++)
+	{
+		if(maxfarr[i]!=-1)
+			printf("and '%d' ",maxfarr[i]);
+	}
+	printf("occured maximum no. of times i.e %d times.\n",max);
 
 	printf("\n\tList of unique page patterns and their corresponding frequencies:-");
 	int num1,pow1;
