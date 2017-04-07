@@ -272,7 +272,7 @@ twoscomp(int x[],int y[],int o[],int nx)
  	printf("\n\nQ (%d) = ",b1);
  	printbin(q,n);
  	
-//Multiplpication process starts
+//Multiplication process starts
  	recode(rec,q);
  	printf("\n\nBooth's RECODED bits : ");
  	printbin(rec,n);
@@ -307,6 +307,11 @@ twoscomp(int x[],int y[],int o[],int nx)
 			if(rec[l]==1)
 	 		{
 	 			copy(res,m1,2*n);
+	 			printbin(res,2*n);
+			}
+			if(rec[l]==0)
+	 		{
+	 			copy(res,zero,2*n);
 	 			printbin(res,2*n);
 			}
 		}
